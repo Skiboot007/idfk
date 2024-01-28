@@ -1,14 +1,47 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
-
+ 
 <head>
-    <title>Our Funky HTML Page</title>
-    <meta name="description" content="Our first page">
-    <meta name="keywords" content="html tutorial template">
+    <title>
+          Getting Clients IP
+      </title>
+    <style>
+        p,
+        h1 {
+            color: green;
+        }
+    </style>
+ 
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+ 
+    <script>
+        /* Add "https://api.ipify.org?format=json" to 
+        get the IP Address of user*/
+        $(document).ready(()=>{
+            $.getJSON("https://api.ipify.org?format=json",
+            function (data) {
+ 
+                // Displayin IP address on screen
+                $("#gfg").html(data.ip);
+            })
+        });
+    </script>
 </head>
-
+ 
 <body>
-    <h1>helloworld</h1>
+    <center>
+        <h1>
+              GeeksforGeeks
+          </h1>
+        <h3>
+              Public IP Address of user is:
+          </h3>
+        <p id="gfg"></p>
+ 
+    </center>
 </body>
-
+ 
 </html>
